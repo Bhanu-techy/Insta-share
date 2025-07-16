@@ -1,0 +1,140 @@
+.bio-details {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  width: 320px;
+}
+
+.bio-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.profile-pic-container {
+  width: 30%;
+}
+.profile_pic {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+}
+.profile-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+.profile-bgcontainer {
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.highlight-img {
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+.count {
+  font-weight: bold;
+}
+.highlight-div {
+  display: flex;
+  width: 100%;
+}
+.username {
+  font-size: 25px;
+  font-weight: 300;
+  font-family: roboto;
+}
+.user-id {
+  font-weight: bold;
+  font-size: 18px;
+}
+.profile-line {
+  width: 70vw;
+}
+.post-icon {
+  width: 70px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.profile-post-bgcontainer {
+  width: 80vw;
+}
+.profile-post-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.posts {
+  color: #000000;
+  font-weight: 500;
+  font-size: 18px;
+}
+.profile-posts {
+  width: 300px;
+  height: 300px;
+  margin: 5px;
+}
+.no-post-div {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.bicamera-icon {
+  width: 50px;
+  font-size: 35px;
+  border: 2px solid #000000;
+  border-radius: 50%;
+  padding: 7px;
+  height: 50px;
+}
+.bio-container-sm {
+  display: none;
+}
+.username-sm {
+  display: none;
+}
+.user-id-sm {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .profile_pic {
+    width: 80px;
+    height: 80px;
+  }
+  .profile-bgcontainer {
+    width: 100vw;
+  }
+  .profile-container {
+    width: 100%;
+  }
+  .bio-container-sm {
+    display: flex;
+    padding: 10px;
+  }
+
+  .post-icon {
+    margin-left: 20px;
+  }
+  .profile-line {
+    width: 100%;
+  }
+  .bio-details {
+    align-self: center;
+    width: 230px;
+  }
+  .profile-id-img-name {
+    text-align: center;
+  }
+  .highlight-img {
+    width: 60px;
+    height: 60px;
+  }
+}

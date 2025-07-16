@@ -1,0 +1,41 @@
+.profile-pic {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.profile-details {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 10px;
+}
+.post-bgcontainer {
+  width: 70vw;
+}
+.post-container {
+  width: 100%;
+  min-height: 750px;
+  border: 2px solid #bfbfbf;
+  border-radius: 5px;
+}
+.post-img {
+  width: 100%;
+  height: 600px;
+}
+.like-button {
+  border: none;
+  background-color: transparent;
+}
+.liked-btn {
+  background-color: red;
+}
+.post-content {
+  padding: 10px;
+}
+.comment-user {
+  font-weight: bold;
+}
+.post-time {
+  color: #bfbfbf;
+}

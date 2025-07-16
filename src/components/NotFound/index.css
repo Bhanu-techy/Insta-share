@@ -1,0 +1,41 @@
+.notFound-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.homepage-button {
+  background-color: #0b69ff;
+  border-radius: 10px;
+  height: 50px;
+  width: 130px;
+  border: none;
+  color: #ffffff;
+}
+.not-found-para {
+  color: #64748b;
+}
+.not-found-img {
+  width: 300px;
+}
+
+@media (max-width: 768px) {
+  .not-found-img {
+    width: 200px;
+  }
+  .homepage-button {
+    height: 30px;
+    width: 90px;
+    font-size: 12px;
+    border-radius: 5px;
+  }
+  .not-found-para {
+    font-size: 12px;
+  }
+  .not-found-head {
+    font-size: 26px;
+  }
+}

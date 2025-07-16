@@ -1,0 +1,144 @@
+.nav-logo {
+  width: 80px;
+}
+.logo-div {
+  display: flex;
+  align-items: center;
+}
+.website-title {
+  font-size: 28px;
+  font-weight: 500;
+  margin-left: 10px;
+}
+.navbar {
+  width: 80vw;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+.nav-container {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-list {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+}
+.nav-item {
+  margin-left: 10px;
+  margin-right: 10px;
+  text-decoration: none;
+  color: #1e293b;
+}
+
+.search-icon {
+  background-color: #bfbfbf;
+  border: none;
+  height: 30px;
+  width: 30px;
+}
+.searchbar {
+  margin-right: 10px;
+  border: 2px;
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  list-style: none;
+}
+.searchResult-empty-view-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.searchResult-empty-img {
+  width: 450px;
+}
+.searchResult-empty-head {
+  font-size: 33px;
+}
+
+.activenav {
+  color: #0b69ff;
+}
+.logo-and-title {
+  display: flex;
+  align-items: center;
+}
+.popup {
+  display: none;
+}
+.cancelbtn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-logo {
+    width: 50px;
+  }
+  .cancelbtn {
+    display: inline;
+  }
+  .navbar {
+    width: 100vw;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+  }
+  .nav-container {
+    width: 90%;
+  }
+  .logo-div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .searchResult-empty-img {
+    width: 250px;
+  }
+  .searchResult-empty-head {
+    font-size: 25px;
+  }
+  .popup {
+    display: inline;
+  }
+  .website-title {
+    font-size: 18px;
+  }
+  .nav-items {
+    margin-right: 15px;
+  }
+  .nav-items-small {
+    display: flex;
+    flex-grow: 1;
+    width: 100vw;
+  }
+
+  .search-input {
+    width: 280px;
+    height: 30px;
+  }
+  .nav-container-sm {
+    display: flex;
+  }
+  .navshow {
+    display: inline;
+  }
+  .navhide {
+    display: none;
+  }
+  .nav-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .searchshow {
+    display: flex;
+    width: 250px;
+  }
+}
