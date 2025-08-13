@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import {Component} from 'react'
 import Loader from 'react-loader-spinner'
 
 import Cookies from 'js-cookie'
@@ -51,7 +51,7 @@ class Home extends Component {
 
     const postResponse = await fetch(posturl, options)
     const postData = await postResponse.json()
-
+    console.log(postData)
     if (postResponse.ok) {
       this.setState({
         postState: stateConstants.success,
@@ -97,7 +97,7 @@ class Home extends Component {
     return (
       <ul className="post-bgcontainer">
         {postList.map(each => (
-          <PostItem details={each} key={each.user_id} />
+          <PostItem details={each} key={each.post_id} />
         ))}
       </ul>
     )

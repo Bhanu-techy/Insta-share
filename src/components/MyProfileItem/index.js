@@ -62,7 +62,7 @@ const ProfileView = props => {
         <div>
           <div className="post-icon">
             <BsGrid3X3 />
-            <h1 className="posts">Posts</h1>
+            <p className="posts">Posts</p>
           </div>
         </div>
         <div className="profile-post-bgcontainer">

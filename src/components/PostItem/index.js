@@ -6,7 +6,9 @@ import {BiShareAlt} from 'react-icons/bi'
 import {FcLike} from 'react-icons/fc'
 
 import Cookies from 'js-cookie'
+
 import SearchContext from '../../context/SearchContext'
+
 import './index.css'
 
 class PostItem extends Component {
@@ -15,7 +17,7 @@ class PostItem extends Component {
   state = {likeBtn: false, details: this.props.details}
 
   onClickLike = async postId => {
-    const {likeBtn, details} = this.state
+    const {likeBtn} = this.state
 
     const url = `https://apis.ccbp.in/insta-share/posts/${postId}/like`
 
@@ -35,20 +37,29 @@ class PostItem extends Component {
     const data = await response.json()
 
     if (likeBtn) {
-      data.like_status = false
-      data.message = 'Post has been liked'
-      this.setState({
-        details: {...details, likes_count: details.likes_count - 1},
-      })
+      this.onDislikeStatus(data)
     } else {
-      data.like_status = true
-      this.setState({
-        details: {...details, likes_count: details.likes_count + 1},
-      })
+      this.onLikeStatus(data)
     }
     this.setState(prevState => ({likeBtn: !prevState.likeBtn}))
 
-    console.log(data.like_status)
+    console.log(response)
+  }
+
+  onLikeStatus = data => {
+    const {details} = this.state
+    data.like_status = true
+    this.setState({
+      details: {...details, likes_count: details.likes_count + 1},
+    })
+  }
+
+  onDislikeStatus = data => {
+    const {details} = this.state
+    data.like_status = false
+    this.setState({
+      details: {...details, likes_count: details.likes_count - 1},
+    })
   }
 
   render() {

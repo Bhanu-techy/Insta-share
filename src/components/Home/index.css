@@ -28,10 +28,14 @@
   margin: 15px;
   width: 90px;
 }
-.slider-container-sm {
-  display: none;
-  width: 90%;
-  padding: 40px;
+ul {
+  gap: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+.slider-container-md {
+  width: 100%;
+  padding: 0px;
 }
 .loader-container {
   display: flex;
@@ -75,6 +79,17 @@
   }
   .home-container {
     width: 100vw;
+  }
+  .story-container {
+    width: 10px;
+    margin: 0px;
+  }
+  .story-img {
+    width: 40px;
+    height: 40px;
+  }.stories-name{
+    font-size: 8px;
+    text-align: center;
   }
 }
 
