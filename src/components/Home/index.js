@@ -19,8 +19,6 @@ const stateConstants = {
 }
 
 class Home extends Component {
-  static contextType = SearchContext
-
   state = {
     storiesList: [],
     postList: [],
@@ -50,12 +48,24 @@ class Home extends Component {
     }
 
     const postResponse = await fetch(posturl, options)
-    const postData = await postResponse.json()
-    console.log(postData)
+
     if (postResponse.ok) {
+      const postData = await postResponse.json()
+
+      const postList = postData.posts.map(each => ({
+        postId: each.post_id,
+        userId: each.user_id,
+        userName: each.user_name,
+        profilePic: each.profile_pic,
+        postDetails: each.post_details,
+        likesCount: each.likes_count,
+        comments: each.comments,
+        createdAt: each.created_at,
+      }))
+
       this.setState({
         postState: stateConstants.success,
-        postList: postData.posts,
+        postList,
       })
     } else {
       this.setState({postState: stateConstants.failure})
@@ -75,20 +85,23 @@ class Home extends Component {
     }
 
     const response = await fetch(url, options)
-    const data = await response.json()
 
     if (response.ok) {
+      const data = await response.json()
+
+      const stories = data.users_stories.map(each => ({
+        userId: each.user_id,
+        userName: each.user_name,
+        storyUrl: each.story_url,
+      }))
+
       this.setState({
-        storiesList: data.users_stories,
+        storiesList: stories,
         storyState: stateConstants.success,
       })
     } else {
       this.setState({storyState: stateConstants.failure})
     }
-  }
-
-  onClickSearch = () => {
-    this.setState({showContent: false})
   }
 
   renderPostsSuccessView = () => {
@@ -97,7 +110,7 @@ class Home extends Component {
     return (
       <ul className="post-bgcontainer">
         {postList.map(each => (
-          <PostItem details={each} key={each.post_id} />
+          <PostItem details={each} key={each.postId} />
         ))}
       </ul>
     )
@@ -156,13 +169,13 @@ class Home extends Component {
         <ul className="slider-container-md">
           <Slider {...settings}>
             {storiesList.map(each => (
-              <li key={each.user_id} className="story-container">
+              <li key={each.userId} className="story-container">
                 <img
-                  src={each.story_url}
+                  src={each.storyUrl}
                   alt="user story"
                   className="story-img"
                 />
-                <p className="stories-name">{each.user_name}</p>
+                <p className="stories-name">{each.userName}</p>
               </li>
             ))}
           </Slider>
@@ -228,5 +241,7 @@ class Home extends Component {
     )
   }
 }
+
+Home.contextType = SearchContext
 
 export default Home

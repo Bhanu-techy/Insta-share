@@ -4,9 +4,11 @@ import SearchContext from '../../context/SearchContext'
 import './index.css'
 
 class Login extends Component {
-  static contextType = SearchContext
+  constructor(props) {
+    super(props)
 
-  state = {showSubmitErr: false, errMsg: ''}
+    this.state = {showSubmitErr: false, errMsg: ''}
+  }
 
   submitSuccess = jwtToken => {
     const {history} = this.props
@@ -96,5 +98,7 @@ class Login extends Component {
     )
   }
 }
+
+Login.contextType = SearchContext
 
 export default Login

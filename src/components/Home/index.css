@@ -51,6 +51,10 @@ ul {
   flex-direction: column;
   align-items: center;
 }
+.link {
+  text-decoration: none;
+  color: black;
+}
 
 @media (max-width: 768px) {
   .line {
@@ -87,7 +91,8 @@ ul {
   .story-img {
     width: 40px;
     height: 40px;
-  }.stories-name{
+  }
+  .stories-name {
     font-size: 8px;
     text-align: center;
   }

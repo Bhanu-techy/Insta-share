@@ -34,13 +34,22 @@ class MyProfile extends Component {
     const response = await fetch(url, options)
     const data = await response.json()
 
-    const user = data.profile
-
-    console.log(response)
-
     if (response.ok) {
+      const user = data.profile
+
+      const details = {
+        userName: user.user_name,
+        userId: user.user_id,
+        userBio: user.user_bio,
+        postsCount: user.posts_count,
+        followersCount: user.followers_count,
+        followingCount: user.following_count,
+        profilePic: user.profile_pic,
+        stories: user.stories,
+        posts: user.posts,
+      }
       this.setState({
-        profileDetails: user,
+        profileDetails: details,
         state: stateConstants.success,
       })
     } else {

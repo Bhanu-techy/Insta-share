@@ -12,9 +12,12 @@ import SearchContext from '../../context/SearchContext'
 import './index.css'
 
 class PostItem extends Component {
-  static contextType = SearchContext
+  constructor(props) {
+    super(props)
+    const {details} = props
 
-  state = {likeBtn: false, details: this.props.details}
+    this.state = {likeBtn: false, details}
+  }
 
   onClickLike = async postId => {
     const {likeBtn} = this.state
@@ -48,17 +51,17 @@ class PostItem extends Component {
 
   onLikeStatus = data => {
     const {details} = this.state
-    data.like_status = true
+    // data.like_status = true
     this.setState({
-      details: {...details, likes_count: details.likes_count + 1},
+      details: {...details, likesCount: details.likesCount + 1},
     })
   }
 
   onDislikeStatus = data => {
     const {details} = this.state
-    data.like_status = false
+    // data.like_status = false
     this.setState({
-      details: {...details, likes_count: details.likes_count - 1},
+      details: {...details, likesCount: details.likesCount - 1},
     })
   }
 
@@ -66,29 +69,29 @@ class PostItem extends Component {
     const {likeBtn, details} = this.state
 
     const {
-      post_details = {},
-      user_id,
-      post_id,
-      profile_pic,
-      likes_count,
-      user_name,
+      postDetails = {},
+      userId,
+      postId,
+      profilePic,
+      likesCount,
+      userName,
       comments = [],
-      created_at,
+      createdAt,
     } = details
 
     return (
       <li className="post-container">
         <div className="profile-details">
           <img
-            src={profile_pic}
+            src={profilePic}
             className="profile-pic"
             alt="post author profile"
           />
-          <Link to={`/users/${user_id}`}>
-            <p>{user_name}</p>
+          <Link to={`/users/${userId}`} className="link">
+            <p>{userName}</p>
           </Link>
         </div>
-        <img src={post_details.image_url} className="post-img" alt="post" />
+        <img src={postDetails.image_url} className="post-img" alt="post" />
         <div className="post-content">
           <div>
             {likeBtn ? (
@@ -96,7 +99,7 @@ class PostItem extends Component {
                 type="button"
                 testid="unLikeIcon"
                 className="like-button"
-                onClick={() => this.onClickLike(post_id)}
+                onClick={() => this.onClickLike(postId)}
               >
                 <FcLike height={50} />
               </button>
@@ -105,7 +108,7 @@ class PostItem extends Component {
                 type="button"
                 className="like-button"
                 testid="likeIcon"
-                onClick={() => this.onClickLike(post_id)}
+                onClick={() => this.onClickLike(postId)}
               >
                 <BsHeart height={50} />
               </button>
@@ -117,8 +120,8 @@ class PostItem extends Component {
               <BiShareAlt height={50} />
             </button>
           </div>
-          <p>{likes_count} likes</p>
-          <p>{post_details.caption}</p>
+          <p>{likesCount} likes</p>
+          <p>{postDetails.caption}</p>
           <div>
             {comments.map(each => (
               <div className="comment-List" key={each.user_id}>
@@ -130,11 +133,13 @@ class PostItem extends Component {
               </div>
             ))}
           </div>
-          <p className="post-time">{created_at}</p>
+          <p className="post-time">{createdAt}</p>
         </div>
       </li>
     )
   }
 }
+
+PostItem.contextType = SearchContext
 
 export default PostItem
