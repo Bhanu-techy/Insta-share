@@ -71,7 +71,7 @@ class Userprofile extends Component {
   }
 
   renderLoadingView = () => (
-    <div className="profile-loader" testid="loader">
+    <div className="profile-loader" data-testid="loader">
       <Loader type="TailSpin" color="#4094EF" height={50} width={50} />
     </div>
   )

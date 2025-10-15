@@ -109,7 +109,7 @@ class Header extends Component {
   )
 
   renderLoadingView = () => (
-    <div className="loader-container" testid="loader">
+    <div className="loader-container" data-testid="loader">
       <Loader type="TailSpin" color="#4094EF" height={50} width={50} />
     </div>
   )
@@ -191,7 +191,7 @@ class Header extends Component {
                       <button
                         type="button"
                         className="search-icon"
-                        testid="searchIcon"
+                        data-testid="searchIcon"
                         onClick={this.onClickSearchBtn}
                       >
                         <FaSearch />

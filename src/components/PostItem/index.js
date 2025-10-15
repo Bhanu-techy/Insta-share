@@ -49,17 +49,15 @@ class PostItem extends Component {
     console.log(response)
   }
 
-  onLikeStatus = data => {
+  onLikeStatus = () => {
     const {details} = this.state
-    // data.like_status = true
     this.setState({
       details: {...details, likesCount: details.likesCount + 1},
     })
   }
 
-  onDislikeStatus = data => {
+  onDislikeStatus = () => {
     const {details} = this.state
-    // data.like_status = false
     this.setState({
       details: {...details, likesCount: details.likesCount - 1},
     })
@@ -97,7 +95,7 @@ class PostItem extends Component {
             {likeBtn ? (
               <button
                 type="button"
-                testid="unLikeIcon"
+                data-testid="unLikeIcon"
                 className="like-button"
                 onClick={() => this.onClickLike(postId)}
               >
@@ -107,16 +105,24 @@ class PostItem extends Component {
               <button
                 type="button"
                 className="like-button"
-                testid="likeIcon"
+                data-testid="likeIcon"
                 onClick={() => this.onClickLike(postId)}
               >
                 <BsHeart height={50} />
               </button>
             )}
-            <button type="button" testid="commentIcon" className="like-button">
+            <button
+              type="button"
+              data-testid="commentIcon"
+              className="like-button"
+            >
               <FaRegComment height={50} />
             </button>
-            <button type="button" testid="shareIcon" className="like-button">
+            <button
+              type="button"
+              data-testid="shareIcon"
+              className="like-button"
+            >
               <BiShareAlt height={50} />
             </button>
           </div>
