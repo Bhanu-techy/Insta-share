@@ -84,7 +84,7 @@ class Header extends Component {
     const {postList} = this.state
 
     return postList.length !== 0 ? (
-      <ul className='post-bgcontainer'>
+      <ul className="post-bgcontainer">
         <h1>Search Results</h1>
         {postList.map(each => (
           <SearchItem result={each} key={each.postId} />
@@ -98,19 +98,19 @@ class Header extends Component {
   renderFailureSearchList = () => (
     <div>
       <img
-        src='https://res.cloudinary.com/dsqphsoxb/image/upload/v1751650133/failureView_po4xd8.png'
-        alt='failure view'
+        src="https://res.cloudinary.com/dsqphsoxb/image/upload/v1751650133/failureView_po4xd8.png"
+        alt="failure view"
       />
       <p>Something went wrong. Please try again</p>
-      <button type='button' onClick={this.onClickSearchBtn}>
+      <button type="button" onClick={this.onClickSearchBtn}>
         Try again
       </button>
     </div>
   )
 
   renderLoadingView = () => (
-    <div className='loader-container' data-testid='loader'>
-      <Loader type='TailSpin' color='#4094EF' height={50} width={50} />
+    <div className="loader-container" data-testid="loader">
+      <Loader type="TailSpin" color="#4094EF" height={50} width={50} />
     </div>
   )
 
@@ -130,13 +130,13 @@ class Header extends Component {
   }
 
   renderEmptyView = () => (
-    <div className='searchResult-empty-view-container'>
+    <div className="searchResult-empty-view-container">
       <img
-        src='https://res.cloudinary.com/dsqphsoxb/image/upload/v1751541232/Group_yrozgm.png'
-        alt='search not found'
-        className='searchResult-empty-img'
+        src="https://res.cloudinary.com/dsqphsoxb/image/upload/v1751541232/Group_yrozgm.png"
+        alt="search not found"
+        className="searchResult-empty-img"
       />
-      <h1 className='searchResult-empty-head'>Search Not Found</h1>
+      <h1 className="searchResult-empty-head">Search Not Found</h1>
       <p>Try different keyword or search again</p>
     </div>
   )
@@ -154,67 +154,67 @@ class Header extends Component {
 
           return (
             <>
-              <nav className='navbar'>
+              <nav className="navbar">
                 <div className={`nav-container ${navsmall}`}>
-                  <div className='logo-div'>
-                    <div className='logo-and-title'>
-                      <Link to='/'>
+                  <div className="logo-div">
+                    <div className="logo-and-title">
+                      <Link to="/">
                         <img
-                          src='https://res.cloudinary.com/dya0bwju7/image/upload/v1749788026/Standard_Collection_8_ujpfzk.png'
-                          alt='website logo'
-                          className='nav-logo'
+                          src="https://res.cloudinary.com/dya0bwju7/image/upload/v1749788026/Standard_Collection_8_ujpfzk.png"
+                          alt="website logo"
+                          className="nav-logo"
                         />
                       </Link>
-                      <h1 className='website-title'>Insta Share</h1>
+                      <h1 className="website-title">Insta Share</h1>
                     </div>
                     <div>
                       <button
-                        type='button'
+                        type="button"
                         onClick={this.onClickHamberger}
-                        className='popup'
+                        className="popup"
                       >
                         <img
-                          src='https://res.cloudinary.com/dsqphsoxb/image/upload/v1751720351/menu_x8id77.png'
-                          alt='hamberger'
+                          src="https://res.cloudinary.com/dsqphsoxb/image/upload/v1751720351/menu_x8id77.png"
+                          alt="hamberger"
                         />
                       </button>
                     </div>
                   </div>
-                  <ul className='nav-list'>
+                  <ul className="nav-list">
                     <li className={`searchbar ${searchbarsm}`}>
                       <input
-                        type='search'
-                        placeholder='Search Caption'
+                        type="search"
+                        placeholder="Search Caption"
                         value={searchInput}
                         onChange={this.onSearchInput}
                       />
                       <button
-                        type='button'
-                        className='search-icon'
-                        data-testid='searchIcon'
+                        type="button"
+                        className="search-icon"
+                        data-testid="searchIcon"
                         onClick={this.onClickSearchBtn}
                       >
                         <FaSearch />
                       </button>
                     </li>
-                    <Link to='/' className='link'>
+                    <Link to="/" className="link">
                       <li className={`nav-item ${homenavcss} ${navshowsm}`}>
                         Home
                       </li>
                     </Link>
-                    <Link to='/my-profile' className='link'>
+                    <Link to="/my-profile" className="link">
                       <li className={`nav-item ${profilenavcss} ${navshowsm}`}>
                         Profile
                       </li>
                     </Link>
                     <li className={`nav-item ${navshowsm}`}>
-                      <button type='button' onClick={this.onClickLogout}>
+                      <button type="button" onClick={this.onClickLogout}>
                         Logout
                       </button>
                     </li>
                     <li className={`nav-item ${navshowsm} cancelbtn`}>
                       <button
-                        type='button'
+                        type="button"
                         onClick={this.onClickCloseHamberger}
                       >
                         x
@@ -223,7 +223,7 @@ class Header extends Component {
                   </ul>
                 </div>
               </nav>
-              <div className='home-container'>
+              <div className="home-container">
                 {!showHomePage && this.renderSearchListResult()}
               </div>
             </>

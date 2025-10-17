@@ -5,8 +5,8 @@
     },
     "parser": "@babel/eslint-parser",
     "extends": [
-        "react-app",
         "airbnb",
+        "react-app",
         "prettier"
     ],
     "parserOptions": {
