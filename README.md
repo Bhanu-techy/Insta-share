@@ -615,15 +615,3 @@ Returns a response containing the list of search posts.
 
 <br/>
 </details>
-
-### Project Submission Instructions
-
-- For Mini Projects, you can submit the test cases at your own pace. But we suggest you to submit the code to know the percentage of completion through test cases and that score will be considered for your interviews
-
-- Also it's important to publish your code frequently using `Step - 4` in the Instructions tab
-
-> ### _Things to Keep in Mind_
->
-> - All components you implement should go in the `src/components` directory.
-> - **Do not remove the pre-filled code**
-> - Want to quickly review some of the concepts you’ve been learning? Take a look at the Cheat Sheets.
