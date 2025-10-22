@@ -195,16 +195,6 @@ The app must have the following functionalities
 
 <br/>
 
-**The following instructions are required for the tests to pass**
-
-- **Note:**
-
-  - Don't use any third-party packages other than packages mentioned in the **Quick Tips**
-  - Use media queries for responsiveness. Instead of rendering the same elements twice for responsiveness.
-  - For Mini Projects, you have to use normal HTML elements to style the React Components. Usage of `styled-components` (CSS in JS) to style React components are not supported in Mini Projects. Test cases won't be passed, if you use styled components
-  - Refer to the below Example for the usage of `testid` in the HTML elements.
-
-    - Example: `<div testid="postItem" className="post-item"/>`.
 
 - **Routes**
 
